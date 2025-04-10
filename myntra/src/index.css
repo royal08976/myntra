@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+body{
+  font-family: "Open Sans";
+  background-color: #ebe9e9;
+}
+
+header{
+  width:100%;
+  height: 70px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+  
+  
+}
+
+.searchbox{
+  background-color: #f0f5ff;
+  border-radius: 6px;
+  padding: 3px 15px;
+
+}
+
+#notification-menu.MuiList-root{
+  top: 50px;
+}
+
+.items table thead tr th{
+  border:1px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+  font-size: medium;
+  font-weight: 700;
+  background-color: #1866ee;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.items table tbody tr td{
+  border:1px solid #e0e0e0;
+  padding: 10px;
+  text-align: left;
+  font-size: small;
+  background-color: #e0e0e0;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.items table tbody .actions button{
+  min-width: 30px !important;
+  padding: 5px 10px !important;
+  margin: 0 5px;
+  font-size: large;
+}
+
+
+
