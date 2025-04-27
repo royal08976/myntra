@@ -45,7 +45,11 @@ const ProductList = () => {
         const [selectedCategory, setSelectedCategory] = useState(null);
         const navigate=useNavigate()
         const location=useLocation()
-
+        
+        const token=localStorage.getItem("token")
+        const api=localStorage.getItem("api")
+        console.log("api sent from productlist during call is",api)
+        // console.log("token is in productlist page is",token)
         // console.log("location is",location)
         // console.log("location.state is",location.state)
 
@@ -98,9 +102,9 @@ const ProductList = () => {
           const fetchProductsAndCategory = async () => {
             try {
               const [response, categoryResponse,pageResponse] = await Promise.all([
-                productApi(),
-                categoryApi(),
-                pageApi(currentPage)
+                productApi(token,api),
+                categoryApi(token,api),
+                pageApi(currentPage,10,token,api)
                
               ]);
 
@@ -163,7 +167,7 @@ const ProductList = () => {
             console.error('Error fetching products:', error);
           }
           finally{
-            setTimeout(()=>{
+            const timer=setTimeout(()=>{
 
               const updateMsg=location.state?.msg
               if(updateMsg!==undefined){
@@ -171,6 +175,7 @@ const ProductList = () => {
                 alert(updateMsg)
               }
             },1000)
+            clearTimeout(timer)
           }
         };
         

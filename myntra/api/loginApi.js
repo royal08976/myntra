@@ -1,6 +1,6 @@
 async function loginApi(loginData) {
 
-    const loginURL="http://192.168.0.164:5000/api/auth/login"
+    const loginURL="http://localhost:5000/api/auth/login"
     const options={
         method:"POST",
         headers:{

@@ -10,7 +10,7 @@ async function registerApi(formdata){
         },
         body:JSON.stringify(formdata),
     }
-    const url="http://192.168.0.164:5000/api/auth/register"
+    const url="http://localhost:5000/api/auth/register"
 
     try{
         const response=await fetch(url,options)

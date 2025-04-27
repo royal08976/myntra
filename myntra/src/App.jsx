@@ -22,6 +22,7 @@ function App() {
      
       const location=useLocation()
       const path=location.pathname
+      
       const pathToHide=["/login","/register"]
 
       const shouldHide=pathToHide.includes(path)

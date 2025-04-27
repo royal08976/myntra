@@ -41,6 +41,8 @@ console.log(activeTab)
 
 const handleLogout=()=>{
   localStorage.removeItem("username")
+  localStorage.removeItem("token")
+  localStorage.removeItem("api")
   navigate("/login")
 }
   return (

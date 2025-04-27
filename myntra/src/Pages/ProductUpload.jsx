@@ -16,6 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
 import { categoryApi } from '../../api/categoryApi';
+import { CiLight } from 'react-icons/ci';
 
 
 
@@ -47,13 +48,15 @@ const ProductUpload = () => {
         categoryUid:""
     })
     const [loading,setLoading]=useState(true)
+    const token=localStorage.getItem("token")
+    const api=localStorage.getItem("api")
 
     // const {product,setUpdateProduct}=location.state
    
     useEffect(()=>{
         const fetchData=async(id)=>{
-            const res=await singleItemApi(id)
-            const categoryRes=await categoryApi()
+            const res=await singleItemApi(id,token,api)
+            const categoryRes=await categoryApi(token,api)
             setCategory(categoryRes.data.categories)
             
             // console.log(res)
@@ -74,13 +77,13 @@ const ProductUpload = () => {
       const categoryName=categories.find((item)=>item.uid==productData.categoryUid)
       const selectedCategory = categoryName || null;
 
-      console.log("my category name is :",selectedCategory)
+    //   console.log("my category name is :",selectedCategory)
   
-    console.log("my category name is :",productData.category)
-    console.log("my category is :",  categories)
+    // console.log("my category name is :",productData.category)
+    // console.log("my category is :",  categories)
   
-    console.log("my product  is :",  productData)
-    console.log("my product  category is :",  productData.categoryUid)
+    // console.log("my product  is :",  productData)
+    // console.log("my product  category is :",  productData.categoryUid)
     // console.log("type of product data is :",typeof productData)
     
     const handleSubmit=async(e)=>{
@@ -100,10 +103,12 @@ const ProductUpload = () => {
         // setProductData(updatedData)
         // console.log("sending this to backend :",updatedData)
         try{
+          console.log("productData is ",productData)
 
-          const data=await PatchItems(id,productData)
+          const data=await PatchItems(id,productData,token,api)
           console.log("my data is ",data)
           
+
           navigate("/product_list", { state: { updateData: data,msg:"your product updated successfully" } });
         }
         catch(err){

@@ -1,5 +1,5 @@
 import React,{useState,useContext, useEffect} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../assets/logo.png"
 import user from "../../assets/user.png"
 
@@ -47,6 +47,7 @@ const Header = () => {
     const openMyAcc = Boolean(anchorEl);
     const openNotifications = Boolean(isNotificationOpen);
     const context=useContext(MyContext)
+    const navigate=useNavigate()
 
     useEffect(() => {
       // Only update when context is available (not null or undefined)
@@ -79,6 +80,14 @@ const Header = () => {
 
       const handleOpenNotificationDrop = () => {
         setIsNotificationOpen(true);
+      }
+
+      const handleAccLogout=()=>{
+        localStorage.removeItem("api")
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+        
+        navigate("/login")
       }
 
 
@@ -517,7 +526,7 @@ const Header = () => {
         </ListItemIcon>
         Reset password
       </MenuItem>
-      <MenuItem onClick={handleAccClose}>
+      <MenuItem onClick={handleAccLogout}>
         <ListItemIcon>
           <Logout fontSize="small" />
         </ListItemIcon>

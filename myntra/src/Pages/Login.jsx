@@ -48,6 +48,11 @@ setEmailError("invalid email address")
             const data=await loginApi(loginData)
             
             console.log("this is my login response data: ",data)
+            const token=data?.data?.token
+            const api=data?.data?.user?.apiKey
+            console.log("api is getting after login is",api)
+            localStorage.setItem("token",token)
+            localStorage.setItem("api",api)
         context.setLoginData(data)
 
 

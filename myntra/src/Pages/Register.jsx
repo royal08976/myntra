@@ -76,9 +76,14 @@ context.setIsToggleSidebar(true)
       
         try {
           const data = await registerApi(formdata);
+          // console.log("the register data is",data.data?.apiKey)
+          // const api=data.data?.apiKey
+          // localStorage.setItem("api",api)
+
+
 
           if (data.status === 201) {
-            navigate("/dashboard");
+            navigate("/login");
           }
         } catch (err) {
           console.log(err);
