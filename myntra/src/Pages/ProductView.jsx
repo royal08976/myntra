@@ -414,9 +414,10 @@ const ProductView = () => {
                     sx={{
                        marginTop:"20px",
                        marginLeft:"20px"
+                       
                         
                     }}
-                    className='w-242 '> Drop Your Replies</Button>
+                    className='w-[96%] '> Drop Your Replies</Button>
                    
 
                  </div>

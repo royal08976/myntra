@@ -17,6 +17,7 @@ import { RxTimer } from "react-icons/rx";
 
 
 const SmallDashbox = (props) => {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -42,7 +43,7 @@ const SmallDashbox = (props) => {
  
     
 
-    <h4 className='text-white text-xl pl-5 pt-4'>Total users</h4>
+    <h4 className='text-white text-xl pl-5 pt-4'>{props.text}</h4>
     <div className='ml-auto pt-5 pr-3'>
     
     <span className='icon  '> 

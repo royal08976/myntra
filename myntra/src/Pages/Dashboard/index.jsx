@@ -93,13 +93,15 @@ const Dashboard = () => {
     "LastMonth",
     "LastYear"
   ]
+  const token=localStorage.getItem("token")
+  const api=localStorage.getItem("api")
 
     useEffect(() => {
         const fetchProductsAndCategory = async () => {
             try {
                 const [response,categoryResponse] = await Promise.all([
-                    productApi(),
-                    categoryApi()])
+                    productApi(token,api),
+                    categoryApi(token,api)])
                 
               
                 console.log(categoryResponse);
@@ -161,26 +163,26 @@ console.log(filteredProducts)
       <div className='flex gap-5 w-[100%] flex-wrap'>
        <div className='w-[48%] h-[200px]'>
 
-        <DashboardBox   color={["#1da256","#48d483"]} icon={    <FaUserCircle size={70} className='p-2  text-gray-400 opacity-30' />
+        <DashboardBox  text="Total users" color={["#1da256","#48d483"]} icon={    <FaUserCircle size={70} className='p-2  text-gray-400 opacity-30' />
         } grow={true}></DashboardBox>
        </div>
        
        <div className='w-[48%] h-[200px]'>
 
-        <DashboardBox color={["#c012e2","#eb64fe"]} icon={    <FaShoppingCart size={70} className='p-2  text-gray-400 opacity-30' />
+        <DashboardBox text="Total orders" color={["#c012e2","#eb64fe"]} icon={    <FaShoppingCart size={70} className='p-2  text-gray-400 opacity-30' />
         }></DashboardBox>
        
        </div>
        <div className='w-[48%] h-[200px]'>
 
 
-        <DashboardBox  width={"48%"} height={"200px"}color={["#2c78e5","#60aff5"]} icon={    <GiShoppingBag size={70} className='p-2 text-gray-400 opacity-30' />
+        <DashboardBox text="Total stocks"  width={"48%"} height={"200px"}color={["#2c78e5","#60aff5"]} icon={    <GiShoppingBag size={70} className='p-2 text-gray-400 opacity-30' />
         }></DashboardBox>
 
 </div>
 <div className='w-[48%] h-[200px]'>
 
-        <DashboardBox  width={"48%"} height={"200px"}color={["#e1950e","#f3cd29"]} icon={    <GiStarsStack size={70} className='p-2  text-gray-400 opacity-30' />
+        <DashboardBox text="Total rating"  width={"48%"} height={"200px"}color={["#e1950e","#f3cd29"]} icon={    <GiStarsStack size={70} className='p-2  text-gray-400 opacity-30' />
         }></DashboardBox>
 </div>
 

@@ -48,7 +48,7 @@ const DashboardBox = (props) => {
  
     
 
-    <h4 className='text-white text-xl pl-5 pt-4'>Total users</h4>
+    <h4 className='text-white text-xl pl-5 pt-4'>{props.text}</h4>
     <div className='ml-auto'>
   {/* <Button 
   sx={{

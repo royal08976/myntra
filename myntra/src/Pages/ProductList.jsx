@@ -318,10 +318,10 @@ if (loading){
             Product View
            </div>
     
-           <div className='flex text-sm mt-6 w-[30%]  gap-10 pl-4 '>
+           <div className='flex text-sm mt-6 w-[30%]  gap-5 pl-4 '>
     
-            <div className='flex w-[35%] bg-gray-100 h-[24px] rounded-[25px]'><span className='pl-0.5 mr-1 -mt-0.5'><IoMdHome size={20} color='gray'/></span>Dashboard</div>/
-            <div className='w-[26%] bg-gray-100 h-[23px] rounded-[25px] pl-2'>products</div>
+            <div className='flex w-auto bg-gray-100 pr-3 h-[24px] rounded-[25px]'><span className='pl-0.5 mr-1 -mt-0.5'><IoMdHome size={20} color='gray'/></span>Products</div>/
+            <div className='w-auto bg-gray-100 h-[23px] rounded-[25px] pl-2 pr-2'>productList</div>
             
            </div>
             
@@ -332,17 +332,17 @@ if (loading){
             <div className='w-full flex ml-8 mt-5 gap-5'>
                 <div className='w-[30%] h-10'>
 
-            <SmallDashbox   color={["#1da256","#48d483"]} icon={    <FaUserCircle size={70} className='p-2  text-gray-400 opacity-30' />
+            <SmallDashbox   text="total users"  color={["#1da256","#48d483"]} icon={    <FaUserCircle size={70} className='p-2  text-gray-400 opacity-30' />
         } grow={true}></SmallDashbox>
                 </div>
                 < div className='w-[30%]'>
                 
 
-        <SmallDashbox color={["#c012e2","#eb64fe"]} icon={    <FaShoppingCart size={70} className='p-2  text-gray-400 opacity-30' />
+        <SmallDashbox text="total products"  color={["#c012e2","#eb64fe"]} icon={    <FaShoppingCart size={70} className='p-2  text-gray-400 opacity-30' />
         }></SmallDashbox>
          </div>
          <div className='w-[30%]'>
-        <SmallDashbox color={["#2c78e5","#60aff5"]} icon={    <GiShoppingBag size={70} className='p-2 text-gray-400 opacity-30' />
+        <SmallDashbox  text="total stocks" color={["#2c78e5","#60aff5"]} icon={    <GiShoppingBag size={70} className='p-2 text-gray-400 opacity-30' />
         }></SmallDashbox>
 
 
